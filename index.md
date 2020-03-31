@@ -1,5 +1,5 @@
-## Major : 소프트웨어학부
+## Division of Computer Science
 
-Name : 이은지
+Name : Lee Eun Jee
 
 E-mail : luc719@hanyang.ac.kr
