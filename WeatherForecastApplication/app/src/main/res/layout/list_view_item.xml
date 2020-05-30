@@ -8,13 +8,15 @@
     tools:context=".MainActivity">
 
     <ListView
-        android:id="@+id/list_item_forcast_textview"
+        android:id="@+id/list_item_forcast_Listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
     <TextView
-        android:id="@android:id/empty"
+        android:id="@+id/list_item_forcast_textview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:minHeight="?android:attr/listPreferredItemHeight"
+        android:gravity="center_vertical"/>
 
 </LinearLayout>
