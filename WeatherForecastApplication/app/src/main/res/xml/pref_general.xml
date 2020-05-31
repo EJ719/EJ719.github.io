@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     android:key="city"
     android:title="@string/pref_title_city"
     android:defaultValue="0"
@@ -8,5 +9,14 @@
     android:entryValues="@array/pref_city_list_values"
     android:negativeButtonText="@null"
     android:positiveButtonText="@null" />
+
+    <ListPreference
+        android:key="city"
+        android:title="@string/pref_title_city"
+        android:defaultValue="0"
+        android:entries="@array/pref_city_list_titles"
+        android:entryValues="@array/pref_city_list_values"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null" />
 
 </PreferenceScreen>

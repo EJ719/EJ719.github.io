@@ -27,13 +27,15 @@ public class ForecastFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_forecast,null);
 
         String[] data = {
-                "Mon 6/23 - Sunny - 31/17",
-                "Tue 6/24 - Foggy - 21/8",
-                "Wed 6/25 - Cloudy - 22/17",
-                "Thurs 6/26 - Rainy - 18/11",
-                "Fri 6/27 - Foggy - 21/10",
-                "Sat 6/28 - TRAPPED IN WEATHERSTATION - 23/18",
-                "Sun 6/29 - Sunny - 20/7"
+                "Sat May 23 - Clouds - 26/18",
+                "Sun May 24 - Rain - 21/17",
+                "Mon May 25 - Clouds - 25/15",
+                "Tue May 26 - Rain - 23/15",
+                "Wed May 27 - Clouds - 24/10",
+                "Thu May 28 - Clouds - 26/16",
+                "Fri May 29 - Clouds - 27/18",
+                "Sat May 30 - Clouds - 25/19",
+                "Sun May 31 - Clear - 33/17"
         };
 
         final List<String> LIST_SAMPLE = new ArrayList<String>(Arrays.asList(data));
