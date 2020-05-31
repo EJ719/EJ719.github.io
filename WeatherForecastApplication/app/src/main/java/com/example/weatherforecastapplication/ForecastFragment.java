@@ -11,35 +11,51 @@ import android.widget.ListView;
 import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import java.util.ArrayList;
 
 public class ForecastFragment extends Fragment {
 
     public ForecastFragment() {
     }
 
-    private String[] city = {"Seoul", "Daejeon", "Taegu", "Busan"};
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View Rview = inflater.inflate(R.layout.list_view_item, container, false);
-        ArrayList<String> list = new ArrayList<String>();
-        ListView listView = (ListView) Rview.findViewById(R.id.list_item_forcast_textview);
-        ArrayAdapter ForecastAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, list);
-        listView.setAdapter(ForecastAdapter);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_forecast,null);
 
-        for (String i : city) {
-            list.add("" + i);
-        }
+        String[] data = {
+                "Mon 6/23 - Sunny - 31/17",
+                "Tue 6/24 - Foggy - 21/8",
+                "Wed 6/25 - Cloudy - 22/17",
+                "Thurs 6/26 - Rainy - 18/11",
+                "Fri 6/27 - Foggy - 21/10",
+                "Sat 6/28 - TRAPPED IN WEATHERSTATION - 23/18",
+                "Sun 6/29 - Sunny - 20/7"
+        };
 
-        ForecastAdapter.notifyDataSetChanged();
+        final List<String> LIST_SAMPLE = new ArrayList<String>(Arrays.asList(data));
+
+        ArrayAdapter Adapter = new ArrayAdapter<String>(
+                getActivity(), R.layout.list_view_item, R.id.list_item_forecast_textview, LIST_SAMPLE
+        );
+
+        ListView listView = (ListView) view.findViewById(R.id.listview);
+        listView.setAdapter(Adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView parent, View v, int position, long id) {
+            public void onItemClick(AdapterView parent, View view, int position, long id) {
+
+                String forecast = (String) parent.getItemAtPosition(position);
+
                 Intent intent = new Intent(getActivity(), DetailActivity.class);
                 startActivity(intent);
             }
         });
-        return Rview;
+
+        return view;
     }
 }
