@@ -1,15 +1,11 @@
 package com.example.weatherforecastapplication;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import androidx.appcompat.widget.Toolbar;
+import android.view.MenuItem;
+
+import com.example.weatheforecastapp.R;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -29,8 +25,22 @@ public class DetailActivity extends AppCompatActivity {
             }
 
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.detail_container, fragment)
+                    .add(R.id.detail_fragment, fragment)
                     .commit();
         }
+        Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar) ;
+        setSupportActionBar(tb) ;
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:{
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
